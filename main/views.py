@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from main.models import Category, Product
 
@@ -34,7 +34,7 @@ def products_categories(request, pk):
 
 
 def product_card(request, name):
-    products_item = Product.objects.get(name=name)
+    products_item = get_object_or_404(Product, name=name)
     context = {
         'product_list': Product.objects.filter(name=name),
         'title': f'Полное описание продукта {products_item.name}'

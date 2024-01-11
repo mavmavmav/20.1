@@ -10,5 +10,4 @@ urlpatterns = [
     path('category/', category, name='category'),
     path('<int:pk>/main/', products_categories, name='products_categories'),
     path('<str:name>/main/', product_card, name='product_card')
-
 ]
